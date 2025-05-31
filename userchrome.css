@@ -1,0 +1,27 @@
+#PlacesToolbarItems {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Remove unwanted extra tab width */
+
+#tabbrowser-arrowscrollbox[orient="horizontal"] {
+
+    &>tab-group {
+        &:not([collapsed]) > .tabbrowser-tab {
+            &:is([muted], [soundplaying], [activemedia-blocked]) {
+                #tabbrowser-tabs[orient="horizontal"] &:not([pinned]) {
+                    min-width: max(var(--tab-min-width-pref, var(--tab-min-width))) !important;
+                }
+            }
+        }
+    }
+    
+    &>.tabbrowser-tab {
+        &:is([muted], [soundplaying], [activemedia-blocked]) {
+            #tabbrowser-tabs[orient="horizontal"] &:not([pinned]) {
+                min-width: max(var(--tab-min-width-pref, var(--tab-min-width))) !important;
+            }
+        }
+    }
+}
